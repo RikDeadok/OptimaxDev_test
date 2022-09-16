@@ -18,19 +18,27 @@ function App() {
 
   return (
     <div className="App">
-      <div className="main-title">To-Do List</div>
+      <div className="wrapper">
+        <div className="content">
+          <div className="container">
+          <div className="main-title">To-Do List</div>
 
-      <div>
-        <input
-          onChange={handleInputChange}
-          value={userInput} 
-          placeholder="Enter your to-do"
-        />
-        <button onClick={handleClick}>Add To-Do</button>
-      </div>
+          <div className="top-menu">
+            <input
+              className="main-input"
+              onChange={handleInputChange}
+              value={userInput} 
+              placeholder="Enter your to-do"
+            />
+            <button className="main-btn" onClick={handleClick}>Add To-Do</button>
+          </div>
 
-      <div className="">
-        <List list={todos}/>
+          <div className="bottom-menu">
+            <List list={todos}/>
+          </div>
+
+          </div>
+        </div>
       </div>
     </div>
   );
