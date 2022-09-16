@@ -1,10 +1,25 @@
-import {useState} from 'react'
-import List from './components/List'
+import { useState, useEffect } from 'react'
+import List from './components/List/List'
 
 function App() {
 
   const [userInput, setUserInput] = useState('')
   const [todos, setTodos] = useState([])
+
+  //Получить данные из localstorage
+  useEffect(() => {
+    const todos = JSON.parse(localStorage.getItem("userTodos"));
+    if (todos) {
+      setTodos(todos);
+    }
+  }, []);
+
+  //Записать данные в localstorage
+  useEffect(() => {
+    if (todos.length) {
+      localStorage.setItem("userTodos", JSON.stringify(todos));
+    }
+  }, [todos]);
 
   const handleInputChange = (event) => {
     setUserInput(event.target.value)
