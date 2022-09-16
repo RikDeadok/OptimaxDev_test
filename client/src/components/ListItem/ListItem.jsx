@@ -1,17 +1,22 @@
+import { useContext } from "react"
 import "./ListItem.css"
+import Context from "../../context";
 
-const ListItem = ({ todo }) => {
-    return (
-      <li className="todo-item">
-        <div className="todo-item__checkbox">
-          <input className="checkbox__input" type="checkbox" id="{todo}" name="{todo}"/>
-          <label className="checkbox__label" for="{todo}"></label>
-        </div>
-        <div className="todo-item__todo">
-          {todo}
-        </div>
-        <button className="todo-item__btn">Delete</button>
-      </li>
-    );
-  };
-  export default ListItem;
+const ListItem = ({ todo, index }) => {
+  const { removeTodo } = useContext(Context)
+
+  return (
+    <li className="todo-item">
+      <strong>{index + 1}</strong>
+      <div className="todo-item__checkbox">
+        <input className="checkbox__input" type="checkbox" id={index} name={index} />
+        <label className="checkbox__label" for={index}></label>
+      </div>
+      <div className="todo-item__todo">
+        {todo}
+      </div>
+      <button className="todo-item__btn" onClick={() => removeTodo(index)}>Delete</button>
+    </li>
+  );
+};
+export default ListItem;

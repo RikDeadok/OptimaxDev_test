@@ -1,9 +1,10 @@
-import { useState, useEffect } from 'react'
-import List from './components/List/List'
+import { useState, useEffect } from "react"
+import List from "./components/List/List"
+import Context from "./context"
 
 function App() {
 
-  const [userInput, setUserInput] = useState('')
+  const [userInput, setUserInput] = useState("")
   const [todos, setTodos] = useState([])
 
   //Получить данные из localstorage
@@ -30,9 +31,13 @@ function App() {
       setUserInput("")
     }
   }
+  const removeTodo = (index) => {
+    setTodos(todos.filter(todo => todo.id !== index))
+    console.log(index)
+  }
 
   return (
-    <div className="App">
+    <Context.Provider value={{ removeTodo }}>
       <div className="wrapper">
         <div className="content">
           <div className="container">
@@ -55,7 +60,7 @@ function App() {
           </div>
         </div>
       </div>
-    </div>
+    </Context.Provider>
   );
 }
 
