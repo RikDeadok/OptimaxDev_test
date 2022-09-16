@@ -1,0 +1,23 @@
+{
+  "name": "optimaxdev_test",
+  "version": "1.0.0",
+  "description": "to-do list covered with tests",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "client": "npm run start --prefix client"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RikDeadok/OptimaxDev_test.git"
+  },
+  "keywords": [
+    "react"
+  ],
+  "author": "Sergey Kovalenko <rikdeadok@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RikDeadok/OptimaxDev_test/issues"
+  },
+  "homepage": "https://github.com/RikDeadok/OptimaxDev_test#readme"
+}
