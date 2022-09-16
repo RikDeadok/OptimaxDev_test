@@ -31,9 +31,12 @@ function App() {
       setUserInput("")
     }
   }
+
+  // const removeTodo = (index) => {
+  //   setTodos(todos.filter(todo => todo.id !== index))
+  // }
   const removeTodo = (index) => {
-    setTodos(todos.filter(todo => todo.id !== index))
-    console.log(index)
+    setTodos(todos.filter(todo => todos.indexOf(todo) !== index))
   }
 
   return (
