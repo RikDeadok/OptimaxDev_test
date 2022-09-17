@@ -32,9 +32,6 @@ function App() {
     }
   }
 
-  // const removeTodo = (index) => {
-  //   setTodos(todos.filter(todo => todo.id !== index))
-  // }
   const removeTodo = (index) => {
     setTodos(todos.filter(todo => todos.indexOf(todo) !== index))
   }
@@ -57,7 +54,7 @@ function App() {
           </div>
 
           <div className="bottom-menu">
-            <List list={todos}/>
+            {todos.length ? <List list={todos}/> : <div className="empty">No todos!</div>}
           </div>
 
           </div>

@@ -15,7 +15,7 @@ const ListItem = ({ todo, index }) => {
       <div className="todo-item__todo">
         {todo}
       </div>
-      <button className="todo-item__btn" onClick={() => removeTodo(index)}>Delete</button>
+      <button className="todo-item__btn" onClick={() => removeTodo(index)}>&times;</button>
     </li>
   );
 };
